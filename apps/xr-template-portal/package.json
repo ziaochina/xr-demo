@@ -1,0 +1,49 @@
+{
+  "_from": "xr-template-portal",
+  "_id": "xr-template-portal@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-/atOylo3tS05EPXV8yVYhCYVSDtblJjWwVfo7hl7YVt+5+cAhC/0On57iQssp1IrzCPuGU0EBRDPcKopiwLMGg==",
+  "_location": "/xr-template-portal",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "xr-template-portal",
+    "name": "xr-template-portal",
+    "escapedName": "xr-template-portal",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/xr-template-portal/-/xr-template-portal-1.0.2.tgz",
+  "_shasum": "dda5fa6d49b4c4808b09402d427b68ddf035c4dc",
+  "_spec": "xr-template-portal",
+  "_where": "/home/zlj/my/github/self/xr-demo/master",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/ziaochina/xr-template-portal/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "xr-template-portal",
+  "directories": {
+    "example": "example"
+  },
+  "homepage": "https://github.com/ziaochina/xr-template-portal#readme",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "xr-template-portal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziaochina/xr-template-portal.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.2"
+}
