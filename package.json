@@ -4,7 +4,7 @@
   "description": "website-demo",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && set COMPRESS=1 && webpack",
+    "build": "rm -rf dist && NODE_ENV=production COMPRESS=1 webpack",
     "start": "webpack-dev-server --inline --progress --colors --watch --compress --content-base ./dist  --port 8089 --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
