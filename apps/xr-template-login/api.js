@@ -7,7 +7,12 @@ export function getMeta() {
 			name: 'header',
 			className: 'header',
 			component: 'Layout',
-			children: 'Monkey King'
+			children: [{
+				name: 'logo',
+				component: '::img',
+				className: 'header-logo',
+				src: '{{$getLogo()}}'
+			},'Monkey King']
 		}, {
 			name: 'content',
 			className: 'content',

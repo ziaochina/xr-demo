@@ -8,30 +8,12 @@ class reducer {
     }
 
     init = (state, option) => {
+        const cfg = config.getCurrent()
         const data = { data: {
-            menu:[{
-                key:'1',
-                name:'about',
-                app:'xr-template-portal-about'
-            },{
-                key:'2',
-                name:'apps',
-                children:[{
-                    key:'201',
-                    name:'app1',
-                    app:'xr-template-portal-app1'
-                },{
-                    key:'202',
-                    name:'app2',
-                    app:'xr-template-portal-app2'
-                }]
-            }],
-            menuDefaultSelectedKeys:['1'],
-            menuDefaultOpenKeys:['2'],
-            content:{
-                appName: 'xr-template-portal-about',
-                appParams:{}
-            }
+            menu:cfg.menu,
+            menuDefaultSelectedKeys:cfg.menuDefaultSelectedKeys,
+            menuDefaultOpenKeys:cfg.menuDefaultOpenKeys,
+            content:cfg.defaultContent
         } }
         return this.metaReducer.init(state, data)
     }

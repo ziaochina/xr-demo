@@ -13,6 +13,8 @@ class action {
         injections.reduce('init')
     }
 
+    getLogo = () => config.getCurrent().logo
+
     login = async () =>{
         const cfg = config.getCurrent()
         const user = this.metaAction.gf('data.form.user')
@@ -20,8 +22,10 @@ class action {
 
         const ret = await config.getCurrent().loginApi(user, password)
         if(ret.result && ret.value){
-            if( this.component.props.onRedirect && cfg.rediectInfo)
+            if( this.component.props.onRedirect && cfg.rediectInfo){
+                this.metaAction.context.set('user',ret.value.user)
                 this.component.props.onRedirect(cfg.rediectInfo)
+            }
         }
         else{
             this.metaAction.toast('error','error')

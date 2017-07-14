@@ -15,7 +15,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "xr-component": "^0.1.151",
-    "xr-meta-engine": "^0.2.16",
+    "xr-meta-engine": "^0.2.20",
     "xr-utils": "0.0.4"
   },
   "devDependencies": {

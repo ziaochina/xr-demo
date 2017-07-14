@@ -12,14 +12,53 @@ export function getMeta(){
 				component:'Layout',
 				className:'header-left',
 				children:[{
+					name:'logo',
+					component:'::img',
+					className: 'header-left-logo',
+					src:'{{$getLogo()}}'
+				},{
 					name:'siteName',
 					component:'::h1',
-					children:'xr-template-portal'
+					children:'Monkey King'
 				}]
 			},{
 				name:'right',
 				component:'Layout',
-				className:'header-right'
+				className:'header-right',
+				children:[{
+					name:'notification',
+					component:'Icon',
+					type:'notification'
+				},{
+					name:'setting',
+					component:'Icon',
+					type:'setting'
+				},{
+					name:'photo',
+					component:'::img',
+					className: 'header-right-photo',
+					src:'{{$getPhoto()}}'
+				},{
+					name:'my',
+					component: 'Dropdown',
+					overlay: {
+						name:'myMenu',
+						component:'Menu',
+						onClick:'{{$myMenuClick}}',
+						children:[{
+							name:'logout',
+							component:'Menu.Item',
+							key:'logout',
+							children:'logout'
+						}]
+					},
+					children:{
+						name:'me',
+						component:'::a',
+						style:{fontSize:15},
+						children:'monkey king'
+					}
+				}]
 			}]
 		},{
 			name:'content',
@@ -36,7 +75,7 @@ export function getMeta(){
 					theme:'dark',
 					defaultSelectedKeys:"{{data.menuDefaultSelectedKeys}}",
           			defaultOpenKeys:"{{data.menuDefaultOpenKeys}}",
-					onClick:'{{$handleMenuClick}}',
+					onClick:'{{$menuClick}}',
 					children:'{{$getMenuChildren()}}'
 				}]
 			},{

@@ -14,6 +14,9 @@ class action {
         injections.reduce('init')
     }
 
+    getLogo = () => config.getCurrent().logo
+
+    getPhoto = () => require('./img/photo.png')
 
     getMenuChildren = () => {
         const menu = this.metaAction.gf('data.menu').toJS()
@@ -33,7 +36,7 @@ class action {
         return loop(menu)
     }
 
-    handleMenuClick = (e) =>{
+    menuClick = (e) =>{
 
         const menu = this.metaAction.gf('data.menu').toJS()
         const find = (children) =>{
@@ -52,6 +55,17 @@ class action {
         const hit = find(menu)
         if(hit){
             this.injections.reduce('setContent', hit.app, {})
+        }
+    }
+
+    myMenuClick = (e) =>{
+        const cfg = config.getCurrent()
+        if(e.key == 'logout'){
+            if( this.component.props.onRedirect && cfg.goAfterLogout){
+                this.metaAction.context.set('user', undefined)
+                this.component.props.onRedirect(cfg.goAfterLogout)
+            }
+
         }
     }
 }
